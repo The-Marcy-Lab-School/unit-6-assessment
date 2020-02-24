@@ -14,11 +14,10 @@ window.addEventListener('load', () => {
 			try {
 				let response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/2e16100c34900daeb2d5cadf60f88682/${lat},${long}`)
 				let data = await response.json()
-				temp[0].innerText = `Temperature: ${data.currently.temperature}`;
+				temp[0].innerText = `Temperature: ${Math.floor(data.currently.temperature)}`;
 				description[0].innerText = `Description: ${data.currently.summary}`;
-				city[0].innerText = `Location: ${data.timezone}`;
+				city[0].innerText = `Location: ${data.timezone.split('/')[1]}, ${data.timezone.split('/')[0]}`;
 				let icon = data.currently.icon
-				const fTemp = data.currently.temperature
 				setIcons(icon, iconAnimate[0])
 
 				temp[0].addEventListener('click', () => {
