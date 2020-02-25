@@ -27,7 +27,6 @@ window.addEventListener('load', () => {
 			 const getApiInfo = async(lat,lon) =>{
 			 	const apiKey = '065ad3fe15434cfea6d6c1092979d8ba'
 			 	const getData = await requestMethod('GET',`https://cors-anywhere.herokuapp.com/https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${apiKey}/${lat},${lon}`)
-			 	console.log(getData)
 				const timezone = getData.timezone
 				const temperature = getData.currently.temperature
 				const summary = getData.currently.summary
