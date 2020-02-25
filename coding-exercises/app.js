@@ -5,10 +5,19 @@ window.addEventListener('load', () => {
 	 *
 	 * Define your variables below this comment.
 	 */
+	const location = document.getElementsByClassName("location")[0];
+	const icon = document.getElementsByClassName("icon")[0];
+	const temperature = document.getElementsByClassName("degree")[0];
+	const unit = document.getElementsByClassName("unit")[0];
+	const weatherSummary = document.getElementsByClassName("weather")[0];
 
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(position => {
+	const geo = navigator.geolocation
+	const key = `6876e6129ccca967dfb873431eb8d719`
+
+	if (geo) {
+		geo.getCurrentPosition(position => {
 			console.log('My General Position:', position);
+
 			const long = position.coords.longitude;
 			const lat = position.coords.latitude;
 
@@ -16,6 +25,17 @@ window.addEventListener('load', () => {
 			 * temperature, description/summary, and timezone.
 			 * Make sure to include error handling.
 			 */
+			fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${key}/${lat},${long}`)
+				.then(res => res.json())
+				.then(json => {
+					return {
+						'timezone': json.timezone,
+						'summary': json.currently.summary,
+						'temperature': json.currently.temperature
+					}
+				})
+				.then(data => {})
+				.catch(error => console.error('weather information not found'))
 
 			/*TODO: Set the weather icon */
 
