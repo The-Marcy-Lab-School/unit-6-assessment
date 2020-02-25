@@ -42,14 +42,15 @@ window.addEventListener('load', () => {
 				
 				setIcons('icon1',icon)
 				span.addEventListener('click',(e)=>{
-					const convert = `${(temperature - 32) * (5 / 9)}`
-					
+					const convert = `${Math.floor(temperature - 32) * (5 / 9)}`
+					const fahreinheit =  `Temperature: ${temperature}° F`
 					const celcius = Number.parseFloat(convert).toFixed()
 					
-			 		if(e.target.innerHTML === celcius){
-			 			e.target.innerHTML = `Temperature: ${temperature}° F`
+			 		if(e.target.innerHTML === fahreinheit){
+			 			e.target.innerHTML = `${celcius}° C`
 			 		}else{
-			 			e.target.innerHTML = celcius 
+			 			e.target.innerHTML = fahreinheit
+			 			
 			 		}
 			 })
 			 }
