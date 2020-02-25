@@ -8,23 +8,21 @@
 	</head>
 	<body>
 		<div class="location">
-			<!-- TODO: give this h1 a class-->
-			<h1>PLACEHOLDER: New York</h1>
-			<!-- TODO: give this canvas element a class. This element will hold an animated icon-->
-			<canvas />
+			<h1 id="location"></h1>
+			<canvas id ="weather-icon"/>
 		</div>
 		<div class="temperature">
 			<div class="degree-section">
-				<!-- TODO: give this h2 a class-->
-				<h2>PLACEHOLDER: 32</h2>
-				<!-- TODO: give this span a class-->
-				<span>PLACHOLDER: F</span>
+				<h2 id="temperature-int"></h2>
+				<span id="temperature-unit"></span>
 			</div>
-			<!-- TODO: give this div a class-->
-			<div>PLACEHOLDER Description: Snowing</div>
+				<label class="switch">
+				  <input id="unit" type="checkbox" name="F/C"/>
+				  <span class="slider round"></span>
+				</label>
+			<div id="weather-desc"></div>
 		</div>
-
-		<!-- TODO: During the appropriate step in this problem set, place the skycon script here-->
+		<script type="text/javascript" src="skycons.js"></script>
 		<script src="app.js"></script>
 	</body>
 </html>

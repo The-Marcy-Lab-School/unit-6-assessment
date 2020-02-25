@@ -1,32 +1,49 @@
 window.addEventListener('load', () => {
-	/**
-	 * TODO : Create your 5 variables to get elements
-	 * based on the classes you created in the `index.html`.
-	 *
-	 * Define your variables below this comment.
-	 */
-
+	alert("This app needs your location to function")
+	let location = document.getElementById("location")
+	let tempNum = document.getElementById("temperature-int")
+	let tempUnit = document.getElementById("temperature-unit")
+	let weatherDesc = document.getElementById("weather-desc")
+	let weatherIcon = document.getElementById("weather-icon")
+	let slider = document.getElementById('unit')
+	const key = "5d09a733effe3c9b42c3616e327b3574"
+	let cors_api_host = 'cors-anywhere.herokuapp.com/';
+  
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(position => {
-			console.log('My General Position:', position);
 			const long = position.coords.longitude;
 			const lat = position.coords.latitude;
-
-			/* TODO: Continue your fetch request to set the DOM Elements for
-			 * temperature, description/summary, and timezone.
-			 * Make sure to include error handling.
-			 */
-
-			/*TODO: Set the weather icon */
-
-			/**TODO: Add an event listener that toggles between Fahrenheit and Celcius
-			 * when a user clicks on the current temperature section.
-			 */
+			
+			fetch(`https://${cors_api_host}https://api.darksky.net/forecast/${key}/${lat},${long}`)
+			.then((response) => response.json())
+			.then((json) => {
+				location.innerText = `${json.timezone.replace(/[_]/g, " ").replace(/[/]/g, ": ")}`
+				tempNum.innerText = Math.floor(json.currently.temperature)
+				tempUnit.innerText = '°F'
+				weatherDesc.innerText = `${json.currently.summary}`
+				setIcons(json)
+				addSlider(json)
+			})
 		});
 	}
 
-	/**
-	 * TODO: Code out the remainder of `setIcons`function.
-	 */
-	const setIcons = () => {};
+	const setIcons = (res) => {
+		let skycons = new Skycons({"color": "white"})
+		skycons.add("weather-icon", res.currently.icon)
+		skycons.play()
+	}
+	
+	const addSlider = (res) => {
+		slider.addEventListener('change', function(){
+			if(slider.checked){
+				tempUnit.innerText = '°C'
+				tempNum.innerText = Math.floor((((res.currently.temperature)- 32) * (5 / 9)))
+			}
+			if(!slider.checked){
+				tempUnit.innerText = '°F'
+				tempNum.innerText = Math.floor(res.currently.temperature)
+			}
+		})
+	}
 });
+
