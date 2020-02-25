@@ -42,15 +42,14 @@ window.addEventListener('load', () => {
 				
 				setIcons('icon1',icon)
 				span.addEventListener('click',(e)=>{
-					const convert = `${(temperature - 32) * (5 / 9)} ° C `
+					const convert = `${(temperature - 32) * (5 / 9)}`
 					
 					const celcius = Number.parseFloat(convert).toFixed()
-
-					const fahreinheit = `Temperature: ${temperature}° F`
+					
 			 		if(e.target.innerHTML === celcius){
-			 			e.target.innerHTML = fahreinheit
+			 			e.target.innerHTML = `Temperature: ${temperature}° F`
 			 		}else{
-			 			e.target.innerHTML = celcius
+			 			e.target.innerHTML = celcius 
 			 		}
 			 })
 			 }
@@ -78,6 +77,8 @@ window.addEventListener('load', () => {
 		skycons.play()
 	};
 });
+
+window.alert('Please Allow Location if your are using this weather app. Thank You !')
 
 const requestMethod = (method, url , data) => {
 	return fetch(url, {
