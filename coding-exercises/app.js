@@ -1,32 +1,33 @@
+console.log("javaScript is Connected.");
+  
 window.addEventListener('load', () => {
-	/**
-	 * TODO : Create your 5 variables to get elements
-	 * based on the classes you created in the `index.html`.
-	 *
-	 * Define your variables below this comment.
-	 */
-
+	alert("Your Location is required.")
+  
+  const secretKey = "5e70c6f2688e6b60969e6693bbfff0c7"
+	const proxy = "https://cors-anywhere.herokuapp.com/"
+	
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(position => {
-			console.log('My General Position:', position);
 			const long = position.coords.longitude;
 			const lat = position.coords.latitude;
-
-			/* TODO: Continue your fetch request to set the DOM Elements for
-			 * temperature, description/summary, and timezone.
-			 * Make sure to include error handling.
-			 */
-
-			/*TODO: Set the weather icon */
-
-			/**TODO: Add an event listener that toggles between Fahrenheit and Celcius
-			 * when a user clicks on the current temperature section.
-			 */
+			
+			// fetch(`${proxy}https://api.darksky.net/forecast/${secretKey}/${lat},${long}`)
+			fetch(`${proxy}https://api.darksky.net/forecast/5e70c6f2688e6b60969e6693bbfff0c7/37.8267,-122.4233`)
+			.then((response) => response.json())
+			.then((json) => {
+				
+				const cityPlaceHolder = document.getElementById("cityPlaceHolder");
+				const degreesPlaceHolder = document.getElementById("degreesPlaceHolder");
+				const scalePlaceHolder = document.getElementById("scalePlaceHolder");
+				const descriptionPlaceHolder = document.getElementById("descriptionPlaceHolder");
+				const canvas = document.getElementById("canvas");
+				console.log(json);
+				
+				cityPlaceHolder.innerText = json.timezone;
+				descriptionPlaceHolder.innerText = json.currently.summary;
+				degreesPlaceHolder.innerText = Math.floor(json.currently.temperature);
+			})
+			.catch(err => console.warn(err))
 		});
 	}
-
-	/**
-	 * TODO: Code out the remainder of `setIcons`function.
-	 */
-	const setIcons = () => {};
 });
