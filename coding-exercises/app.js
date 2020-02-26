@@ -1,32 +1,63 @@
 window.addEventListener('load', () => {
-	/**
-	 * TODO : Create your 5 variables to get elements
-	 * based on the classes you created in the `index.html`.
-	 *
-	 * Define your variables below this comment.
-	 */
+	const location = document.getElementsByClassName("location")[0];
+	const icon = document.getElementsByClassName("icon")[0];
+	const temperature = document.getElementsByClassName("degree")[0];
+	const unit = document.getElementsByClassName("unit")[0];
+	const weatherSummary = document.getElementsByClassName("weather")[0];
+	const degreeSection = document.getElementsByClassName("degree-section")[0];
 
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(position => {
+	const geo = navigator.geolocation
+	const key = `6876e6129ccca967dfb873431eb8d719`
+
+	if (geo) {
+		geo.getCurrentPosition(position => {
 			console.log('My General Position:', position);
+
 			const long = position.coords.longitude;
 			const lat = position.coords.latitude;
 
-			/* TODO: Continue your fetch request to set the DOM Elements for
-			 * temperature, description/summary, and timezone.
-			 * Make sure to include error handling.
-			 */
+			fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${key}/${lat},${long}`)
+				.then(res => res.json())
+				.then(json => {
+					const data = {
+						'timezone': json.timezone,
+						'summary': json.currently.summary,
+						'temperature': json.currently.temperature,
+						'icon': json.currently.icon
 
-			/*TODO: Set the weather icon */
+					}
+					location.innerText = data.timezone
+					temperature.innerText = data.temperature
+					weatherSummary.innerText = data.summary
 
-			/**TODO: Add an event listener that toggles between Fahrenheit and Celcius
-			 * when a user clicks on the current temperature section.
-			 */
+
+					setIcons(icon, data.icon);
+					unitChange(data.temperature);
+
+				})
+				.catch(error => {
+					location.innerText = "Weather not found."
+					console.error('Please allow weather app to use your location.')
+				})
+			const unitChange = function (temperatureNum) {
+				degreeSection.addEventListener('click', (e) => {
+					if (unit.innerText.includes('F')) {
+						unit.innerText = 'UNIT: C'
+						temperature.innerText = (((temperatureNum) - 32) * (5 / 9)).toFixed(2)
+					}
+					else {
+						unit.innerText = 'UNIT: F'
+						temperature.innerText = temperatureNum
+					}
+
+				})
+			};
+
 		});
-	}
-
-	/**
-	 * TODO: Code out the remainder of `setIcons`function.
-	 */
-	const setIcons = () => {};
+	};
+	const setIcons = function (icon, iconID) {
+		const skycons = new Skycons({ "color": "white" });
+		skycons.set(icon, iconID);
+		skycons.play();
+	};
 });
