@@ -23,18 +23,27 @@ window.addEventListener('load', () => {
 				const canvas = document.getElementById("canvas");
 				console.log(json);
 				
-				cityPlaceHolder.innerText = json.timezone;
+				cityPlaceHolder.innerText = json.timezone.substring(json.timezone.lastIndexOf("/") + 1).replace(/[_]/g, " ");
 				degreesPlaceHolder.innerText = Math.floor(json.currently.temperature);
 				descriptionPlaceHolder.innerText = `${json.currently.summary} \n ${json.hourly.summary}`;
 				setIcons(json.currently.icon)
 
-        
-        
+				const slider = document.getElementById("slider");
+				
+				slider.addEventListener("change", (e) => {
+					if (!slider.checked) {  
+						scalePlaceHolder.innerText = "C"
+						degreesPlaceHolder.innerText = Math.floor((json.currently.temperature - 32) * (5 / 9))
+					}
+					if (slider.checked) { 
+						scalePlaceHolder.innerText = "F"
+						degreesPlaceHolder.innerText = Math.floor(json.currently.temperature);
+					}
+				})
 			})
 			.catch(error => {
 				alert("Weather not found.");
-				console.warn(error)
-				
+				console.warn(error);
 			})
 		});
 	}
@@ -43,7 +52,9 @@ window.addEventListener('load', () => {
 
 const setIcons = (icon) => {
 	const skycons = new Skycons({"color": "pink"});
-	skycons.add(canvas, json);
+	skycons.add(canvas, icon);
 	skycons.play();
 	console.log(icon)
 }
+
+
