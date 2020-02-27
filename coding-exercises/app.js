@@ -11,8 +11,8 @@ window.addEventListener('load', () => {
 			const long = position.coords.longitude;
 			const lat = position.coords.latitude;
 			
-			// fetch(`${proxy}https://api.darksky.net/forecast/${secretKey}/${lat},${long}`)
-			fetch(`${proxy}https://api.darksky.net/forecast/5e70c6f2688e6b60969e6693bbfff0c7/37.8267,-122.4233`)
+			fetch(`${proxy}https://api.darksky.net/forecast/${secretKey}/${lat},${long}`)
+			// fetch(`${proxy}https://api.darksky.net/forecast/5e70c6f2688e6b60969e6693bbfff0c7/37.8267,-122.4233`)
 			.then((response) => response.json())
 			.then((json) => {
 				
@@ -24,10 +24,26 @@ window.addEventListener('load', () => {
 				console.log(json);
 				
 				cityPlaceHolder.innerText = json.timezone;
-				descriptionPlaceHolder.innerText = json.currently.summary;
 				degreesPlaceHolder.innerText = Math.floor(json.currently.temperature);
+				descriptionPlaceHolder.innerText = `${json.currently.summary} \n ${json.hourly.summary}`;
+				setIcons(json.currently.icon)
+
+        
+        
 			})
-			.catch(err => console.warn(err))
+			.catch(error => {
+				alert("Weather not found.");
+				console.warn(error)
+				
+			})
 		});
 	}
 });
+
+
+const setIcons = (icon) => {
+	const skycons = new Skycons({"color": "pink"});
+	skycons.add(canvas, json);
+	skycons.play();
+	console.log(icon)
+}
