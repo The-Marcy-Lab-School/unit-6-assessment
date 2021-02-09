@@ -1,5 +1,7 @@
 # Coding Exercises - Create a real-time weather app.
 
+> Dark Sky API is Deprecated
+
 ## Introduction
 
 The purpose of these coding exercises are to build a simple weather app that allows you to get weather data and display it on your browser. All directions can be found here. The starter code also includes a few `TODO` comments in order to guide you.
