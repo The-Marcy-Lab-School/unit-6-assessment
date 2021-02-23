@@ -12,8 +12,8 @@ window.addEventListener('load', () => {
 			const long = position.coords.longitude;
 			const lat = position.coords.latitude;
 
-			/* TODO: Continue your fetch request to set the DOM Elements for
-			 * temperature, description/summary, and timezone.
+			/* TODO: Make your fetch request to set the DOM Elements for
+			 * city, temperature, description/summary.
 			 * Make sure to include error handling.
 			 */
 
@@ -25,8 +25,5 @@ window.addEventListener('load', () => {
 		});
 	}
 
-	/**
-	 * TODO: Code out the remainder of `setIcons`function.
-	 */
-	const setIcons = () => {};
+	
 });
