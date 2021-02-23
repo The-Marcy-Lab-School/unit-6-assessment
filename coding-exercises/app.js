@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
 			const lat = position.coords.latitude;
 
 			/* TODO: Make your fetch request to set the DOM Elements for
-			 * city, temperature, description/summary.
+			 * city, temperature, description.
 			 * Make sure to include error handling.
 			 */
 
