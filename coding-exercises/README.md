@@ -5,7 +5,7 @@
 The purpose of these coding exercises are to build a simple weather app that allows you to get weather data based on the user's location and display it in the browser. All directions can be found below. **You should be using the `fetch` or `async/await` syntax.** The starter code also includes a few `TODO` comments in order to guide you.
 
 ## Demo
-[This](https://thuyanduong.github.io/weather-app/) is the app you will be recreating. Be sure to click "Allow" when asked to know your location.
+[This](https://thuyanduong.github.io/weather-app/) is the app you will be recreating. Be sure to _Allow Location Access_ (Firefox) or _Allow_ (Google Chrome) when asked.
 
 ## Directions
 
