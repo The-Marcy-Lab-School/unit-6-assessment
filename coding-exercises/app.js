@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
 	/**
 	 * TODO : Create your 5 variables to get elements
 	 * based on the classes you created in the `index.html`.
