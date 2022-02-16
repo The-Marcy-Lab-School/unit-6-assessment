@@ -4,6 +4,9 @@
 
 The purpose of these coding exercises are to build a simple weather app that allows you to get weather data and display it on your browser. All directions can be found here. **You should be using the `fetch` or `async/await` syntax.** The starter code also includes a few `TODO` comments in order to guide you.
 
+## Demo
+[This](https://thuyanduong.github.io/weather-app/) is the app you will be recreating. Be sure to click "Allow" when asked for your location.
+
 ## Directions
 
 **Step 0:**
