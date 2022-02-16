@@ -1,8 +1,6 @@
-# Fetch and Async Problem Set: Asynchronous Programming
+# Fetch and Async Assessment
 
 ### Directions
-
-1. Clone this problem set.
 
 **For Short Responses:**
 
