@@ -46,6 +46,8 @@ Be sure to:
 3. set the DOM elements for the `city`, `temperature`, and `description` based on data returned from the API
 4. include error handling
 
+**If you are having trouble fetching data and logging it to the console, reach out to an instructor for assistance.**
+
 **Step 6: Access Weather Icons**
 
 For the placeholder icon, find a list of WeatherBit icons [here](https://www.weatherbit.io/api/codes)
