@@ -37,7 +37,7 @@ Now you need actual weather data from an API. A great resource is WeatherBit. Vi
 
 Reference the [WeatherBit Current Weather Documentation](https://www.weatherbit.io/api/weather-current).
 
-Within `app.js`, code out a fetch request using the WeatherBit API. **You must use the geolocation data provided by navigator.geolocation. Do not hard code your location to any one city.** Write a simple console.log statement to ensure your app is working and to analyze the response object.
+Within `app.js`, code out a fetch request using the WeatherBit API. **You must use the geolocation data provided by navigator.geolocation** (from Step 3). **Do not hard code your location to any one city.** Write a simple console.log statement to ensure your app is working and to analyze the response object.
 
 Be sure to:
 
