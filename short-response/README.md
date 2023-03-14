@@ -8,4 +8,4 @@
 
 4. What's the difference between a `GET` and `POST` request, and when would you use one versus the other? When you make a `POST` fetch in JavaScript, what additional information would you have to include that a `GET` request doesn't need?
 
-5. Consider one of your favorite apps. Describe one feature of that app that is likely powered by AJAX.
+5. Consider one of your favorite apps. Describe one feature of that app that is likely powered by an asynchronous fetch.
