@@ -33,20 +33,20 @@ Gain context about the starter code on lines 12-15 of `app.js` by reading the MD
 
 Now you need actual weather data from an API. Visit the [WeatherAPI website](https://www.weatherapi.com/) and sign up for a free account. Once you verify your email address and log in, go to https://www.weatherapi.com/my/ to view your API key. _NOTE: Keep your unique API key handy for upcoming steps._
 
-**Step 5: Fetch Data**
+**Step 5: Fetch Data and Display on the DOM**
 
-Reference the [WeatherAPI Documentation](https://www.weatherapi.com/docs/). You will need to figure out how to fetch the current weather for the location (latitude and logitude) of your computer. 
+Reference the [WeatherAPI Documentation](https://www.weatherapi.com/docs/). You will need to figure out how to fetch the current weather for the location (latitude and logitude) of your computer and display it on the DOM. 
 
-Within `app.js`, code out a fetch request using the WeatherAPI. **You must use the geolocation data provided by navigator.geolocation** (from Step 3). **Do not hard code your location to any one city or location.** Write a simple console.log statement to ensure your app is working and to analyze the response object.
-
-> Hint: You can search the documenation for the word "Example" since that will often show you examples of how to format your fetch URLs. Additionally, you should search the documentation for the words "Latitude" and "Longitude" as that might give you some examples of how to format your query parameters in your URL.
+Within `app.js`, code out a fetch request using the WeatherAPI. **You must use the geolocation data provided by navigator.geolocation** (from Step 3). **Do not hard code your location to any one city or location.** 
 
 Be sure to:
 
-1. code out your fetch request to the correct endpoint
-2. make a simple console.log statement first to ensure you can return data
-3. set the DOM elements for the city or location name, current temperature, and current condition based on data returned from the API
-4. include error handling
+1. Code out your fetch request to the correct endpoint
+2. Make a simple console.log statement first to ensure you have successfully fetch to the API and can return data
+3. Set the DOM elements for the city or location name, current temperature, and current condition based on data returned from the API
+4. Include error handling
+
+> Hint: You can search the documentation for the word "Example" since that will often show you examples of how to format your fetch URLs. Additionally, you should search the documentation for the words "Latitude" and "Longitude" as that might give you some examples of how to format your query parameters in your URL.
 
 **If you are having trouble fetching data and logging it to the console, reach out to an instructor for assistance.**
 
