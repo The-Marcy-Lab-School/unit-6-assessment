@@ -5,13 +5,13 @@
 The purpose of these coding exercises is to build a simple weather app that allows you to get weather data based on the user's location and display it in the browser. All directions can be found below. **You should be using the `fetch` or `async/await` syntax.** The starter code also includes a few `TODO` comments in order to guide you.
 
 ## Demo
-[This](https://thuyanduong.github.io/weather-app/) is an image of the app you will be recreating. 
+[This](../pictures/app.png) is an image of the app you will be recreating. 
 
 ## Directions
 
 **Step 0:**
 
-Internalize the structure of the `index.html` and `app.js`. Ensure that you can see the placeholder app:
+Internalize the structure of the `index.html` and `app.js`. Ensure that you can see the [placeholder app](../pictures/placeholder.png):
 
 1. Open your `index.html` in an internet browser.
 2. Be sure to _Allow Location Access_ (Firefox) or _Allow_ (Google Chrome) when asked. This will appear each time the browser is refreshed. Be advised, access to geolocation is necessary for this app to work. There will be more information about this in _Step 3_.
