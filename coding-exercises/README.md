@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The purpose of these coding exercises are to build a simple weather app that allows you to get weather data based on the user's location and display it in the browser. All directions can be found below. **You should be using the `fetch` or `async/await` syntax.** The starter code also includes a few `TODO` comments in order to guide you.
+The purpose of these coding exercises is to build a simple weather app that allows you to get weather data based on the user's location and display it in the browser. All directions can be found below. **You should be using the `fetch` or `async/await` syntax.** The starter code also includes a few `TODO` comments in order to guide you.
 
 ## Demo
 [This](https://thuyanduong.github.io/weather-app/) is an image of the app you will be recreating. 
