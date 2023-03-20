@@ -27,7 +27,7 @@ In the `app.js` file, create 5 variables to select the 5 elements you need from 
 
 **Step 3:**
 
-Gain context about the starter code on lines 12-15 of `app.js` by reading the MDN documentation on [Navigator.geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation) and the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API). _NOTE:Navigator.geolocation is more precise using mobile devices and more generic when using laptops_.
+Gain context about the starter code on lines 12-15 of `app.js` by reading the MDN documentation on [Navigator.geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation) and the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API).
 
 **Step 4:**
 
