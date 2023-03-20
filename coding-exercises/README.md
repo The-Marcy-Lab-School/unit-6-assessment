@@ -31,7 +31,7 @@ Gain context about the starter code on lines 12-15 of `app.js` by reading the MD
 
 **Step 4:**
 
-Now you need actual weather data from an API. Visit the [WeatherAPI website](https://www.weatherapi.com/) and sign up for a free account. Once you verify your email address, go to https://www.weatherapi.com/my/ to view your API key. _NOTE: Keep your unique API key handy for upcoming steps._
+Now you need actual weather data from an API. Visit the [WeatherAPI website](https://www.weatherapi.com/) and sign up for a free account. Once you verify your email address and log in, go to https://www.weatherapi.com/my/ to view your API key. _NOTE: Keep your unique API key handy for upcoming steps._
 
 **Step 5: Fetch Data**
 
