@@ -54,14 +54,11 @@ Be sure to:
 
 The API also returns an `icon`. Set the image on your DOM based on data returned from the API so that is displays the appropriate icon. 
 
-**Step 7 Toggle Between Measurements:**
+**Step 7 Toggle Between Celcius and Fahrenheit**
 
-Give the user the added functionality of toggling between Celcius and Fahrenheit.
-The WeatherBit API returns temperatures in Celcius by default.
-Here is a helpful formula to use for converting the temperature to Fahrenheit:
-`fahrenheit = ( celsius * 9/5 ) + 32`
+Give the user the added functionality of toggling between Celcius and Fahrenheit. Here is a helpful formula to use for converting the Celcius to Fahrenheit: `fahrenheit = ( celsius * 9/5 ) + 32`
 
-Add an event listener that toggles between Fahrenheit and Celcius when a user clicks on the current temperature section.
+Add an event listener that toggles between Fahrenheit and Celcius when a user **clicks on the current temperature** section.
 
 **Step 8: Cleanup and check**
 
