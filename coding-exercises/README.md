@@ -13,9 +13,9 @@ The purpose of these coding exercises is to build a simple weather app that allo
 
 Internalize the structure of the `index.html` and `app.js`. Ensure that you can see the placeholder app:
 
-a. Open your `index.html` in an internet browser.
-b. Be sure to _Allow Location Access_ (Firefox) or _Allow_ (Google Chrome) when asked. This will appear each time the browser is refreshed. Be advised, access to geolocation is necessary for this app to work. There will be more information about this in _Step 3_.
-c. Open up the Console in the broswer. If you've done the steps above correctly, you should see logged to the console "My General Position:" followed by a _GeolocationPosition_ object.
+  a. Open your `index.html` in an internet browser.
+  b. Be sure to _Allow Location Access_ (Firefox) or _Allow_ (Google Chrome) when asked. This will appear each time the browser is refreshed. Be advised, access to geolocation is necessary for this app to work. There will be more information about this in _Step 3_.
+  c. Open up the Console in the broswer. If you've done the steps above correctly, you should see logged to the console "My General Position:" followed by a _GeolocationPosition_ object.
 
 **Step 1:**
 
