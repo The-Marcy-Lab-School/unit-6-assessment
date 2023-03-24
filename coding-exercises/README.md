@@ -56,7 +56,7 @@ The API also returns an `icon`. Set the image on your DOM based on data returned
 
 **Step 7 Toggle Between Celcius and Fahrenheit**
 
-Give the user the added functionality of toggling between Celcius and Fahrenheit. Here is a helpful formula to use for converting the Celcius to Fahrenheit: `fahrenheit = ( celsius * 9/5 ) + 32`
+Give the user the added functionality of toggling between Celcius and Fahrenheit. Check to see if the API returns this data or you can calculate the conversion yourself. Here is a helpful formula to use for converting the Celcius to Fahrenheit: `fahrenheit = ( celsius * 9/5 ) + 32`. 
 
 Add an event listener that toggles between Fahrenheit and Celcius when a user **clicks on the current temperature** section.
 
